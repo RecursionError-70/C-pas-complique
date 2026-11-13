@@ -1,0 +1,139 @@
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+03  : si un pion est bloqué par une autre pièce
+
+04  : si une pièce bloque la porté de la tour / fou / reine
+
+05  : si pion arrive au bout du plateau alors promotion
+
+06  : si une pièce est bloqué par une pièce de son camp
+
+07  : si le roi est en échec
+
+08  : si le roi est en vaincu
+
+13 : si pièce mangé alors afficher : attaquant pos X victime pos
+
+15 : affichage des déplacements fait et passer dans l'ordre ( 1.K->b3 - b->g3 )
+
+16 : tour de l'adversaire avant de passer au coup suivant
+
+24 : si roi en échec alors vérifié si échec et mat
+
+25 : porté des pièces théorique pour interdire le déplacement au roi dans une case si l'adversaire peut l'y atteindre
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+26 : vérification que la pièce que l'on veut déplacer existe bien dans la position indiquée avant de valider le coup (FAIT)
+
+17 : identification des deplacements des pièces doubles ( fou , tour , Cavalier, pion) en fonction de leurs position initiale et d'arrivée ( b->a3 - b->c5) (FAIT)
+
+18 : déplacement des pions adverses (FAIT)
+
+19 : définition de chaque liste comme un chiffre de 1 à 8 et chaque i comme une lettre de A à H (FAIT)
+
+20 : tant que les rois vivent , la partie continue (FAIT)
+
+21 : demander de jouer après chaque coup de l'adversaire (FAIT)
+
+14 : positions des pièces dans le "plateau" (a,b,c,d,e,f,g,h,I,j) (1,2,3,4,5,6,7,8) et les connectés au pièces ( Q->a1 , K->f6 etc... ) (FAIT)
+
+09  : si une pièce est mangé (FAIT)
+
+10 : possibilité d'avancer le pion de 2 cases si à la position de départ (FAIT)
+
+11 : nom pour chaque pièce ( p , r , b , q , k ) (FAIT)
+
+12 : nom pour pièce adverse (P , R , B , Q , K ) (FAIT)
+
+01  : Si déplacement nn valide (FAIT)
+
+02  : si limite du plateau atteinte (FAIT)
+
+
+//////////////////////////////////////////////////////////////////////////////////////
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////
+
+CUBE CHESS : 
+
+
+Commment se deplacer vers une autre face ????
+
+demande normale : 
+
+Ia3-a5 
+
+avec changement de face : 
+
+Aia3-Ba5 ??????
+
+OUI 
+
+Donc pas besoin d'un tableau 3D pour faire le plateau d'echec !!!  
+
+On attend donc une entrée de 8 charactères ou : 
+
+-   coup[0] et coup[5] = les faces de départ et d'arrivée
+-   coup[1] = la piece jouer
+-   coup[2] et coup[7] = les colonnes de départ et d'arrivée
+-   coup[3] et coup[8] = les lignes de départ et d'arrivée
+
+
+
+
+CONDITION DE CHANGEMENT de face 
+
+if face dep et face arr == 
+    normal 
+sinon 
+
+    pour le pion : 
+
+    si face_arr = spécifique 
+    si x_dep = 8 
+    si y_dep == y_arr et x_arr = face_arr 0  
+
+    condition pour manger : 
+
+    ...
+
+    pour la tour :
+
+    si y_dep == y_arr / x_dep == x_arr
+
+    pour le cavalier :
+
+    
+
+    pour le fou :
+
+    pour le roi :
+
+    pour le reine :
+
+
+000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+
+BONJOUR MILO  
+
+bac à sable = jeu sur cube : 
+
+commandes : APa2-Aa3
+
+face A , pion ( majuscule ) en position a2 vas en a3 de la face A 
+
+*j'ai pas encore fait les déplacements de toutes les pièces mais les Pions majuscules devrai fonctionner pour la faceA seulement pour l'instant 
+
+
+--------------
+
+main = jeu d'echec normal 
+
+commandes : Pa2-a3
+
+toutes les pieces sont jouables , y'as juste pas de conditions d'échecs 
+
+000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
